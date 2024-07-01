@@ -1,0 +1,14 @@
+def when_started1():
+    global dist, angle
+    while True:
+        if down_eye.detect(RED):
+            drivetrain.stop()
+            drivetrain.drive_for(FORWARD, 30, MM)
+            drivetrain.drive_for(REVERSE, 200, MM)
+            drivetrain.turn_for(RIGHT, 5, DEGREES)
+        else:
+            if front_distance.found_object():
+                drivetrain.drive_for(FORWARD, 200, MM)
+            else:
+                drivetrain.drive_for(FORWARD, 10, MM)
+                drivetrain.turn_for(RIGHT, 10, DEGREES)
